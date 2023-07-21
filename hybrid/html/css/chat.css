@@ -1,0 +1,237 @@
+button,
+span {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+html,
+body {
+  position: relative;
+  margin: 0 0;
+  padding: 0 0;
+}
+body {
+  background-image: url(../image/bg.svg);
+  background-size: 100%;
+  background-position: 0 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 7.5rem;
+  margin: 0 auto;
+  height: 100vh;
+}
+.navbar {
+  width: 100%;
+  max-width: 7.5rem;
+  margin: 0 auto;
+  height: 1.4rem;
+  position: relative;
+  padding-top: 0.88rem;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+}
+span.navbar-set {
+  position: absolute;
+  left: 0.32rem;
+  top: 0.88rem;
+  width: 0.52rem;
+  height: 0.52rem;
+  display: inline-block;
+  background-image: url(../image/icon-set.svg);
+  background-size: 0.32rem 0.32rem;
+  background-position: center left;
+  background-repeat: no-repeat;
+  z-index: 9;
+}
+.navbar-tit {
+  text-align: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.36rem;
+  line-height: 0.52rem;
+  height: 0.52rem;
+  align-self: center;
+}
+
+div.call {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.96rem;
+  box-sizing: border-box;
+}
+div.calltimer {
+  display: inline-block;
+  width: 3.5rem;
+  height: 0.64rem;
+  text-align: center;
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-family: "simhei";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.32rem;
+  line-height: 0.64rem;
+  /* identical to box height, or 125% */
+  opacity: 0.9;
+}
+div.callanimate {
+  width: 5.2rem;
+  height: 5.55rem;
+  position: relative;
+}
+.callanimate span.callanimate-inner {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5.2rem;
+  height: 5.55rem;
+  transform-origin: center center;
+  background-image: url("../image/chat.svg");
+  background-size: 100%;
+  background-repeat: no;
+  transition: all;
+}
+
+span.callanimate-inner.calling {
+  animation: callAnimateRotate 10s linear infinite;
+}
+.chatfooter {
+  position: absolute;
+  width: 100%;
+  height: 1.6rem;
+  left: 0;
+  top: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.chatfooter-tips {
+  position: absolute;
+  top: -0.82rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  color: #fff;
+  padding: 0 0.2rem;
+  min-width: 2rem;
+  max-width: 6rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 1);
+  font-size: 0.24rem;
+  opacity: 0;
+  border-radius: 0.24rem;
+  transition: opacity 0.25s linear;
+}
+.showfade {
+  animation: toastfade 0.25s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.chatfooter-tips span {
+  font-size: inherit;
+  min-width: 1.6rem;
+  max-width: 5.6rem;
+  display: inline-block;
+  overflow: hidden;
+  height: 0.7rem;
+  line-height: 0.7rem;
+}
+
+.chatfooter-tips::after {
+  position: absolute;
+  content: "";
+  border-left: 0.2rem solid transparent;
+  border-right: 0.2rem solid transparent;
+  border-top: 0.2rem solid #000;
+  border-bottom: 0.2rem solid transparent;
+  bottom: -0.32rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button.chatbtn {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-image: url("../image/icon-call.svg");
+  background-size: 100% 100%;
+}
+.audio {
+  width: 0.1rem;
+  opacity: 0;
+  height: 0.1rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  overflow: hidden;
+}
+.chatbtn.linking {
+  animation: callBtnRotate 2s linear infinite;
+}
+.chatbtn.hungup {
+  background-image: url("../image/icon-hangup.svg");
+  background-size: 100% 100%;
+}
+
+/* btn  */
+@keyframes callAnimateRotate {
+  50% {
+    transform: rotateZ(180deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+/* btn  */
+@keyframes callBtnRotate {
+  10% {
+    transform: rotateZ(35deg) scale(1.05);
+  }
+  20% {
+    transform: rotateZ(-8deg) scale(1.05);
+  }
+  30% {
+    transform: rotateZ(35deg) scale(1.05);
+  }
+  40% {
+    transform: rotateZ(-8deg);
+  }
+  50% {
+    transform: rotateZ(35deg);
+  }
+  60% {
+    transform: rotateZ(-8deg);
+  }
+  70% {
+    transform: rotateZ(35deg);
+  }
+  80% {
+    transform: rotateZ(-8deg);
+  }
+  90% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(0deg) scale(1);
+  }
+}
+
+@keyframes toastfade {
+  100% {
+    opacity: 0.75;
+  }
+}

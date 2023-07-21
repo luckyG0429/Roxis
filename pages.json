@@ -1,0 +1,35 @@
+{
+	"pages": [
+		{
+		    "path" : "pages/chat/chat",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "Rxios",
+		        "enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"transparentTitle":"always"
+		    }
+		},
+		{
+		    "path" : "pages/setting/setting",
+		    "style" :                                                                                    
+		    {
+				"transparentTitle":"always",
+		        "navigationBarTitleText": "Setting",
+		        "enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"animationType": "slide-in-left",
+						"animationDuration": 300
+		    }
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	}
+}

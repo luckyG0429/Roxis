@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"
+    />
+    <title>Rxios</title>
+  </head>
+  <link rel="stylesheet" type="text/css" href="css/chat.css" />
+  <body>
+    <div class="navbar">
+      <span class="navbar-set" id="setting"></span>
+      <span class="navbar-tit">Incoming Voice Call</span>
+    </div>
+    <div class="call">
+      <div id="calltimer" class="calltimer"></div>
+      <!-- tonghua  -->
+      <div class="callanimate">
+        <span class="callanimate-inner"></span>
+      </div>
+    </div>
+    <div class="chatfooter">
+      <!-- <div> -->
+      <div class="chatfooter-tips">
+        <span id="tips-text">通话连接发生错误～ 请稍后重试</span>
+      </div>
+      <!-- 开启对讲之后可以把后端返回的音频流播放出来 -->
+      <button id="intercomBegin" class="chatbtn">
+        <video class="audio" controls src="./asset/demo.mp3"></video>
+      </button>
+      <!-- 开启对讲之后可以把后端返回的音频流播放出来 -->
+      <!-- <button id="playstop">停止播放</button> -->
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (e) {
+      if (window.innerWidth > 750) {
+        document.getElementsByTagName("html")[0].style.fontSize =
+          750 / 7.5 / 3 + "px";
+        return;
+      }
+      document.getElementsByTagName("html")[0].style.fontSize =
+        window.innerWidth / 7.5 + "px";
+    });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+    integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+  <!-- <script src="./js/jsAudio.js"></script> -->
+  <script type="text/javascript" src="js/uniapp.webview.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="./js/chat.js"></script>
+  <script src="./js/recorder-core.js"></script>
+  <script src="./js/wav.js"></script>
+  <script src="./js/pcm.js"></script>
+  <script src="./js/script01.js"></script>
+  <script src="./js/script02.js"></script>
+  <script src="./js/recorder.js"></script>
+  <script>
+    if (/mobile/i.test(navigator.userAgent)) {
+      //移动端加载控制台组件
+      var elem = document.createElement("script");
+      elem.setAttribute("type", "text/javascript");
+      elem.setAttribute(
+        "src",
+        "https://xiangyuecn.gitee.io/recorder/assets/ztest-vconsole.js"
+      );
+      document.body.appendChild(elem);
+      elem.onload = function () {
+        new VConsole();
+      };
+    }
+  </script>
+</html>
